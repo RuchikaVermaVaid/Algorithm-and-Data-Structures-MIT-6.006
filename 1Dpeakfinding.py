@@ -16,7 +16,15 @@ def peakfinder1D(arr):
         print(arr)
 #         print('Middle')
         print("Middle elements is "+str(arr[mid]))
-        if (len(arr)>=3):#If length array>=3 then divide and conquer approach is required
+        if (len(arr)==1):
+            return arr[0]
+        elif (len(arr) == 2):
+            if arr[mid]>arr[0]:
+                return arr[mid]
+            else:
+                return arr[0]
+        else:
+                #If length array>=3 then divide and conquer approach is required
                 #If middle element is greater than both of its neighboring elements
                 if ((arr[mid] > arr[mid+1]) & (arr[mid] > arr[mid-1])):
                     return arr[mid] 
@@ -32,12 +40,9 @@ def peakfinder1D(arr):
                         return peakfinder1D(arr[:mid])
                     else:
                         return peakfinder1D(arr[mid:])
-                
-        print('1D peak found')           
-        return arr[mid]
+
     
 
 array = [1,155,100,25,58,100,104]
 print("Given array is " + str(array))
 print("Local peak in 1D array is " + str(peakfinder1D(array))) 
-    
