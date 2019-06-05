@@ -30,8 +30,8 @@ def peakfinder1D(arr):
                 return arr[mid]
             else:
                 return arr[0]
-        else:#If length of array is greater than 2, use divide and conquer approach
-                #If length array>=3 then divide and conquer approach is required
+        else:
+                #If length of array is greater than 2, use divide and conquer approach 
                 #If middle element is greater than both of its neighboring elements
                 if ((arr[mid] > arr[mid+1]) & (arr[mid] > arr[mid-1])):
                     return arr[mid] 
