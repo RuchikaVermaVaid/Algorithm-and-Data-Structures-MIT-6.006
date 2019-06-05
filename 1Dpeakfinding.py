@@ -5,6 +5,13 @@ Created on Tue Jun  4 18:00:03 2019
 @author: Ruchika
 """
 
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jun  4 18:00:03 2019
+
+@author: Ruchika
+"""
+
 #######################################################################################
 ############################## Function to find local 1D peak #########################
 #######################################################################################
@@ -16,14 +23,14 @@ def peakfinder1D(arr):
         print(arr)
 #         print('Middle')
         print("Middle elements is "+str(arr[mid]))
-        if (len(arr)==1):
+        if (len(arr)==1):# If length of array is 1 then it has a peak at 0th element
             return arr[0]
-        elif (len(arr) == 2):
+        elif (len(arr) == 2):#If length of array is 2 then do comparison with the element at 0th index
             if arr[mid]>arr[0]:
                 return arr[mid]
             else:
                 return arr[0]
-        else:
+        else:#If length of array is greater than 2, use divide and conquer approach
                 #If length array>=3 then divide and conquer approach is required
                 #If middle element is greater than both of its neighboring elements
                 if ((arr[mid] > arr[mid+1]) & (arr[mid] > arr[mid-1])):
@@ -41,8 +48,6 @@ def peakfinder1D(arr):
                     else:
                         return peakfinder1D(arr[mid:])
 
-    
-# Create an array to check peakfinder1D function
-array = [1,155,100,25,58,100,104]
-print("Given array is " + str(array))
-print("Local peak in 1D array is " + str(peakfinder1D(array))) 
+#Check how the function peakfinder1D works
+array = [1,155,120,105,58,100,55,85]
+print(peakfinder1D(array))
