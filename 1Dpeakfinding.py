@@ -42,7 +42,7 @@ def peakfinder1D(arr):
                         return peakfinder1D(arr[mid:])
 
     
-
+# Create an array to check peakfinder1D function
 array = [1,155,100,25,58,100,104]
 print("Given array is " + str(array))
 print("Local peak in 1D array is " + str(peakfinder1D(array))) 
