@@ -11,6 +11,7 @@ Created on Tue Jun  4 21:12:58 2019
 
 import numpy as np
 def peakfinder2D(arr):
+#It uses peakfinder1D function
     mid_j = int(arr.shape[1]/2)
     temp_arr = arr[:,mid_j]
     maxx = peakfinder1D(temp_arr)
